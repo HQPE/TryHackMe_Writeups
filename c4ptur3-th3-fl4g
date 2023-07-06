@@ -17,6 +17,12 @@ answr: Each Base64 digit represents exactly 6 bits of data.
   5-68 65 78 61 64 65 63 69 6d 61 6c 20 6f 72 20 62 61 73 65 31 36 3f
 answr: hexadecimal or base16?
 
+  6-Ebgngr zr 13 cynprf!
+answr: Rotate me 13 places!
+
+  7-*@F DA:? >6 C:89E C@F?5 323J C:89E C@F?5 Wcf E:>6DX
+answr: You spin me right round baby right round (47 times)
+
 
 
 
@@ -29,4 +35,5 @@ answr: hexadecimal or base16?
 3- 5 eşittir base32'yi ifade eder.
 4- 2 eşittir ile bitiyorsa base64 kullanıldığı anlamına gelir.
 5- hexadecimal olarak şifrelenmiş bir metin.
-6-
+6- Rot oldugunu içinde 13 kullanarak bize belirtmiş, bu rot13 ile şifrelenmiş bir metin.
+7- Sembolleri ve sayıları metin içinde karıştırılması rot47 olabilecegi anlamına gelir.
