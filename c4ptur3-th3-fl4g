@@ -11,6 +11,12 @@ answr: lets try some binary out!
   3-MJQXGZJTGIQGS4ZAON2XAZLSEBRW63LNN5XCA2LOEBBVIRRHOM======
 answr: base32 is super common in CTF's
 
+  4-RWFjaCBCYXNlNjQgZGlnaXQgcmVwcmVzZW50cyBleGFjdGx5IDYgYml0cyBvZiBkYXRhLg==
+answr: Each Base64 digit represents exactly 6 bits of data.
+
+  5-68 65 78 61 64 65 63 69 6d 61 6c 20 6f 72 20 62 61 73 65 31 36 3f
+answr: hexadecimal or base16?
+
 
 
 
@@ -21,4 +27,6 @@ answr: base32 is super common in CTF's
 1- kasik bir leet speak anlamına gelir.
 2- 0'lar ve 1'ler, binary ile uğraştığımız anlamına gelir.
 3- 5 eşittir base32'yi ifade eder.
-4- 2 eşittir base64 kullanıldığı anlamına gelir.
+4- 2 eşittir ile bitiyorsa base64 kullanıldığı anlamına gelir.
+5- hexadecimal olarak şifrelenmiş bir metin.
+6-
