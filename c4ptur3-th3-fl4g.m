@@ -1,8 +1,8 @@
-<h1> This is a writeups for the c4ptur3-th3-fl4g TryHackMe room.</h1>
+This is a writeups for the c4ptur3-th3-fl4g TryHackMe room.
 
-   **#Task 1  Translation & Shifting**
+   Task 1  Translation & Shifting
 
-  1-c4n y0u c4p7u23 7h3 f149?
+   1-c4n y0u c4p7u23 7h3 f149? 
 answr: can you capture the flag?
 
   2-01101100 01100101 01110100 01110011 00100000 01110100 01110010 01111001 00100000 01110011 01101111 01101101 01100101 00100000 01100010 01101001 01101110 01100001 01110010 01111001 00100000 01101111 01110101 01110100 00100001
