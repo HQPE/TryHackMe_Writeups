@@ -36,13 +36,13 @@
 
 
 
-1- Kasik bir leet speak anlamına gelir.
-2- 0'lar ve 1'ler, binary ile uğraştığımız anlamına gelir.
-3- 5 eşittir base32'yi ifade eder.
-4- 2 eşittir ile bitiyorsa base64 kullanıldığı ifade eder.
-5- Metin hexadecimal olarak şifrelenmiştir.
-6- Rot olduğunu belirtmek için 13 kullanılarak şifrelenmiş bir metindir, yani rot13 kullanılmıştır.
-7- Metinde semboller ve sayılar karıştırıldığından rot47 olabilirr.
-8- Morse alfabesi
-9- ASCII tablosu 
-10 -Sırasıyla base64, morse, rot47 ve son olarak decimal (deximal) ile şifrelenmiş metni bulabiliriz
+1- Kasik bir leet speak anlamına gelir.  
+2- 0'lar ve 1'ler, binary ile uğraştığımız anlamına gelir.  
+3- 5 eşittir base32'yi ifade eder.  
+4- 2 eşittir ile bitiyorsa base64 kullanıldığı ifade eder.     
+5- Metin hexadecimal olarak şifrelenmiştir.  
+6- Rot olduğunu belirtmek için 13 kullanılarak şifrelenmiş bir metindir, yani rot13 kullanılmıştır.  
+7- Metinde semboller ve sayılar karıştırıldığından rot47 olabilirr.  
+8- Morse alfabesi.  
+9- ASCII tablosu.   
+10 -Sırasıyla base64, morse, rot47 ve son olarak decimal (deximal) ile şifrelenmiş metni bulabiliriz.  
