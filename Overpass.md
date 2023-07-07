@@ -6,8 +6,9 @@ nmap ile açık port taraması. 22 ssh ve 80 http portlarının açık olduğunu
 80 http, web sayfasında işimize yarar bir şey yok, directory taraması yapalım
 ![2](https://github.com/HQPE/TryHackMe_Writeups/assets/65927735/0a704600-ffac-44c6-8e20-c4f3ee7c77df)
 
-/admin dizinini elde ettik. klasik şifre kombinasyonu deneyebiliriz ya da cookieler üzerinden hareket edebiliriz
-![3](https://github.com/HQPE/TryHackMe_Writeups/assets/65927735/d5232b8d-5583-4f6b-87dd-e759a68c6db2)
+kodu incelediğimiz zaman bir cookie zaafiyetiyle karşılaşiyoruz, kodda kısaca token varsa cookie olarak kabul et ve admin yetkisi ver anlamını taşıyor
+![4](https://github.com/HQPE/TryHackMe_Writeups/assets/65927735/158a5fc1-08a4-411a-bc75-db9f41a5b3c1)
+
 
 kodu incelediğimiz zaman bir cookie zaafiyetiyle karşılaşiyoruz, kodda kısaca token varsa cookie olarak kabul et ve admin yetkisi ver anlamını taşıyor
 ![4](https://github.com/HQPE/TryHackMe_Writeups/assets/65927735/158a5fc1-08a4-411a-bc75-db9f41a5b3c1)
