@@ -8,9 +8,6 @@ nmap -sV -sC 10.10.x.x
 ![1](https://github.com/user-attachments/assets/2c4b9243-26f5-41a6-8473-1a78c72fe272)
 
 
-![2](https://github.com/HQPE/TryHackMe_Writeups/assets/65927735/0a704600-ffac-44c6-8e20-c4f3ee7c77df)
-
-
 
 Tarayıcıdan web sitesini açın:
 
