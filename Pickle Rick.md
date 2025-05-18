@@ -25,6 +25,7 @@ Tarama sonucu web sunucusunun açık olduğunu gördük. İlk adım olarak, o se
 <br>
 Web sayfalarında genellikle yorum satırları veya gizli bilgiler bırakılabilir. Sayfa kaynağına (Ctrl+U) bakarak, saldırıya veya ipuçlarına yarayacak herhangi bir bilgi var mı diye kontrol ediyoruz.
 <br><br>
+
 ![Image](https://github.com/user-attachments/assets/ec4771aa-09db-4dca-bfd9-7b574d38f7f8)
 <br><br><br><br>
 
