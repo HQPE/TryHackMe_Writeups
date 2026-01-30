@@ -1,5 +1,8 @@
-Hacker vs. Hacker
-Birisi bu sunucuyu zaten ele geçirdi! İçeri girip önlemlerinden kaçınabilir misin?
+echo "============================================================================"
+echo "HACKER vs HACKER - CTF WALKTHROUGH"
+echo "============================================================================"
+echo ""
+
 
 🔐 Tarama
 Bir makineye saldırı yapmadan önce, o makinenin açık olan servislerini ve portlarını öğrenmek gerekir. Bu, nereden başlayacağımızı anlamamızı sağlar. Portlar ve servisler hakkında bilgi almak için Nmap kullanıyoruz:
