@@ -3,7 +3,7 @@ A Rick and Morty CTF. Help turn Rick back into a human!</h1>
 
 
 
-<h1>🔐Tarama</h1>
+<h1>Tarama</h1>
 <br>
 Bir makineye saldırı yapmadan önce, o makinenin açık olan servislerini ve portlarını öğrenmek gerekir. Bu, nereden başlayacağımızı anlamamızı sağlar. Portlar ve servisler hakkında bilgi almak için Nmap kullanıyoruz:
 
@@ -14,14 +14,14 @@ Bir makineye saldırı yapmadan önce, o makinenin açık olan servislerini ve p
 ![1](https://github.com/user-attachments/assets/2c4b9243-26f5-41a6-8473-1a78c72fe272)
 <br><br><br><br>
 
-<h1>🔐Web Servisine Erişim</h1>
+<h1>Web Servisine Erişim</h1>
 <br>
 Tarama sonucu web sunucusunun açık olduğunu gördük. İlk adım olarak, o servisin çalıştığı port üzerinden web sitesine erişim sağlıyoruz. Böylece servis üzerinde keşif yapabiliriz:<pre> http://10.10.x.x </pre>
 
 ![Image](https://github.com/user-attachments/assets/282997e5-783c-4265-901d-11bc7c25fcf7)
 <br><br><br><br>
 
-<h1>🔐Sayfa Kaynağı İncelemesi</h1>
+<h1>Sayfa Kaynağı İncelemesi</h1>
 <br>
 Web sayfalarında genellikle yorum satırları veya gizli bilgiler bırakılabilir. Sayfa kaynağına (Ctrl+U) bakarak, saldırıya veya ipuçlarına yarayacak herhangi bir bilgi var mı diye kontrol ediyoruz.
 <br><br>
@@ -30,7 +30,7 @@ Web sayfalarında genellikle yorum satırları veya gizli bilgiler bırakılabil
 <br><br><br><br>
 
 
-<h1>🔐Gizli Dosya ve Dizinleri Bulma</h1>
+<h1>Gizli Dosya ve Dizinleri Bulma</h1>
 <br>
 Web sunucusunda, normalde erişim sağlanmayan veya gizli olan dizin ve dosyalar olabilir. Bunlar bazen önemli bilgiler içerebilir. Bunun için Gobuster gibi araçlarla dizin taraması yapıyoruz:
 <pre> gobuster dir -u http://10.10.x.x -w /usr/share/wordlists/dirb/common.txt </pre>
@@ -47,7 +47,7 @@ Bulunan dosyalar:
 
 
 
-<h1>🔐Giriş Paneli</h1>
+<h1>Giriş Paneli</h1>
 <br>
 Bulduğumuz dizindeki dosya:
 Robots.txt Arama motorlarına yol gösteren, hacker'lara sızma ipucu veren dosya!
@@ -67,7 +67,7 @@ Bulduğumuz bilgilerle giriş yapalım:
 
 
 <br><br><br><br>
-<h1>🔐Komut Paneli</h1>
+<h1>Komut Paneli</h1>
 <br>
 Giriş yaptıktan sonra komut çalıştırabileceğimiz bir panel açıldı. Bu, hedef makine üzerinde komut çalıştırma izni verdiği için kritik. Buradan sistem hakkında daha fazla bilgi alabiliriz.
 Basit komutları deneyelim:
@@ -77,7 +77,7 @@ Basit komutları deneyelim:
 
 
 
-<h1>🔐Web Sitesinin Dosyalarını İnceleme</h1>
+<h1>Web Sitesinin Dosyalarını İnceleme</h1>
 <br>
 Dosyalar bize sistem hakkında ipuçları verebilir. Örneğin, içinde şifrenin, malzemelerin veya diğer önemli bilgilerin olduğu dosyalar olabilir.
 <pre>ls</pre>
@@ -91,7 +91,7 @@ Dosyalar bize sistem hakkında ipuçları verebilir. Örneğin, içinde şifreni
 <br><br><br><br>
 
 
-<h1>🔐Kullanıcı Dizini ve İkinci Malzeme</h1>
+<h1>Kullanıcı Dizini ve İkinci Malzeme</h1>
 <br>
 Home dizinleri, kullanıcılara özel dosyaları içerir. Burada önemli bilgiler veya ikinci malzeme olabilir.
 <pre>
@@ -104,7 +104,7 @@ less /home/rick/"second ingredients"
 <br><br><br><br>
 
 
-<h1>🔐Yetki Yükseltme Kontrolü</h1>
+<h1>Yetki Yükseltme Kontrolü</h1>
 <br>
 Sistemdeki yetkilerimizi kontrol etmek, daha fazla erişim elde etmek için önemli. sudo -l komutu ile kullanıcının hangi komutları şifresiz çalıştırabileceğini öğreniriz.
 
@@ -116,7 +116,7 @@ Bu bir yetki yükseltme açığı.
 ![Image](https://github.com/user-attachments/assets/9f45b73a-41ea-427a-9cad-a94a1a90b398)
 
 <br><br><br><br>
-<h1>🔐Yetkili Root hesabı</h1>
+<h1>Yetkili Root hesabı</h1>
 <br>
 Elde ettiğimiz bu yetki ile root kullanıcısına ait dosyaları okuyabiliriz.
 <pre>sudo less /root/3rd.txt</pre>pre>
