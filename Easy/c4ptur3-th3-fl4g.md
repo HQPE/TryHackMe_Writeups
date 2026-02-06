@@ -109,5 +109,36 @@ Komutu çalıştırdıktan sonra bizden bir parola istendi. Parola girildikten s
 <br><br><br><br>
 
 
+<h2>Task 4 – Security Through Obscurity</h2>
+
+Bu görevde amaç, bir dosyanın içine gizlenmiş ek içerikleri tespit ederek analiz etmektir.
+“Security through obscurity” yaklaşımıyla, dosya göründüğünden daha fazlasını barındırmaktadır.
+
+Dosya Analizi (Binwalk)
+
+İlk olarak verilen görsel dosya binwalk kullanılarak analiz edildi.
+Bu analiz sonucunda dosyanın içinde JPEG dışında ek olarak PNG ve arşiv verileri bulunduğu tespit edildi.
+Tespit edilen gömülü dosyaları çıkarmak için binwalk extraction işlemi uygulandı.
+Extraction sırasında güvenlik uyarısı alındığı için --run-as=root parametresi kullanıldı.
+
+```binwalk meme_1559010886025.jpg``` <br>
+```sudo binwalk -e --run-as=root meme_1559010886025.jpg```
+
+<img width="829" height="383" alt="image" src="https://github.com/user-attachments/assets/5f802bfb-c21d-4bc7-a664-343a848a5c03" />
+
+Bu işlem sonucunda, dosyanın içinde gizlenmiş içerikler ayrı bir klasör içerisine çıkarıldı.
+
+<img width="629" height="495" alt="image" src="https://github.com/user-attachments/assets/054350f6-507d-4356-aeb9-98de826baa6f" />
+
+İçerik İncelemesi (Strings)
+
+Çıkarılan dosyalar üzerinde strings komutu kullanılarak okunabilir metinler arandı.
+Bu yöntem, dosya içine gizlenmiş düz metinleri tespit etmek için oldukça etkilidir.
+
+```strings extracted_file_name```
+<img width="835" height="583" alt="image" src="https://github.com/user-attachments/assets/6791e510-7ce5-41fe-a446-a86a93e5decc" />
+
+
+
 
 
