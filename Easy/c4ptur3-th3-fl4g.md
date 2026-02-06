@@ -1,4 +1,4 @@
-<h1>This is a writeups for the c4ptur3-th3-fl4g TryHackMe room. </h1>
+<h1>c4ptur3-th3-fl4g TryHackMe</h1>
 
   <h2>Task 1  Translation & Shifting</h2>
 
@@ -65,3 +65,49 @@
 8- Morse alfabesi.  
 9- ASCII tablosu.   
 10 -Sırasıyla base64, morse, rot47 ve son olarak decimal (deximal) ile şifrelenmiş metni bulabiliriz.  
+
+<br><br><br><br>
+  <h2>Task 2  Spectrograms</h2>
+TryHackMe üzerinde verilen ses dosyasında gizli bir mesaj olabileceğini düşündük.  
+Bu tür sorularda en yaygın yöntem, ses dosyasını **spectrogram** olarak incelemektir.
+
+---
+Ses dosyasını **Sonic Visualiser** ile açtık ve spectrogram görünümünü ekledik.
+
+- Menüden **Layer → Add Spectrogram** seçildi
+- Frekans ve zaman eksenleri incelendi
+
+Bu işlem sonrasında gizli mesajın **görsel olarak** sesin içine gömüldüğü fark edildi.
+
+<img width="1319" height="777" alt="image" src="https://github.com/user-attachments/assets/2faf9c68-d476-4e07-b317-68e232adf851" />
+Bu yöntemle ses dosyası içerisinde gizlenmiş olan mesaj başarıyla elde edilmiş oldu.
+---
+
+<br><br><br><br>
+  <h2>Task 3  Steganography</h2>
+
+<br>
+Elimizde bir adet JPEG görsel bulunuyor. Bu tür CTF senaryolarında görsellerin içine gizli mesajlar veya dosyalar saklanabilir. İlk adım olarak dosyanın metadata bilgilerini inceleyerek olağan dışı bir durum var mı kontrol ediyoruz.
+
+<pre>exiftool stegosteg_1559008553457.jpg</pre>
+
+<img width="625" height="421" alt="image" src="https://github.com/user-attachments/assets/33128d92-7f57-40f0-8583-943274d47850" />
+
+Exif çıktısında dosyanın çözünürlüğü, boyutu ve formatı gibi standart bilgiler dışında dikkat çeken ekstra bir alan bulunmuyor. Bu durum, mesajın metadata yerine farklı bir yöntemle gizlenmiş olabileceğini düşündürüyor.
+
+Steganografi Analizi
+<br>
+Metadata içinde bir ipucu bulunamadığı için steganografi araçlarına yöneliyoruz. Bu noktada en yaygın kullanılan araçlardan biri olan <b>steghide</b> ile görselin içine gömülü bir dosya olup olmadığını kontrol ediyoruz.
+
+<pre>steghide extract -sf stegosteg_1559008553457.jpg</pre>
+
+Komutu çalıştırdıktan sonra bizden bir parola istendi. Parola girildikten sonra araç, görselin içine gizlenmiş dosyayı çıkarmayı başardı.
+
+<pre>wrote extracted data to "steganopayload2248.txt"</pre>
+
+<img width="653" height="211" alt="image" src="https://github.com/user-attachments/assets/fc207a3e-0970-4853-a320-469842e04a6e" />
+<br><br><br><br>
+
+
+
+
