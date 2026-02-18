@@ -2,8 +2,11 @@
 
 <h2>Objective</h2>
 Bu makinede hedef, web uygulaması üzerinde keşif yaparak gizli dizinleri bulmak ve zafiyetleri kullanarak admin paneline erişim sağlamaktır.
+<br>
+<br>
 
-<hr>
+> Web 
+---
 
 <h2>Nmap Scan</h2>
 
