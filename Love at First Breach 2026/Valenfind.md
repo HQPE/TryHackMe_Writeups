@@ -2,7 +2,11 @@
 
 <h1>Objective</h1>
 My Dearest Hacker,  
-There’s this new dating app called “Valenfind” that just popped up out of nowhere. I hear the creator only learned to code this year; surely this must be vibe-coded. Can you exploit it?
+There’s this new dating app called “Valenfind” that just popped up out of nowhere. I hear the creator only learned to code this year; surely this must be vibe-coded. Can you exploit it?<br>
+<br>
+
+> Web 
+---
 
 <h1>Machine Initialization</h1>
 İlk önce makineler açılır
